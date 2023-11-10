@@ -1,0 +1,49 @@
+.proxy-converter-wrapper {
+	font-size: .875rem;
+	border: solid 1px var(--pcom-blue);
+	background: var(--pcom-cool-gray);
+	padding: .5em;
+	border-radius: var(--pcom-border-radius);
+	margin-bottom: .375em;
+}
+.proxy-converter-wrapper > div {
+	display: flex;
+	align-items: baseline;
+}
+.proxy-converter-wrapper > div + div {
+	margin-top: .5em;
+}
+.proxy-converter-wrapper > div label {
+	margin-bottom: 0;
+	margin-right: .375em;
+}
+.proxy-converter-wrapper > div input {
+	flex-grow: 1;
+	padding: .25em .5em;
+		border-radius: var(--pcom-border-radius);
+	border: solid 2px var(--pcom-dark-blue);
+}
+.proxy-converter-wrapper > div button {
+	margin-left: .375em;
+	color: var(--pcom-white);
+	background: var(--pcom-blue);
+	border-radius: var(--pcom-border-radius);
+	border: solid 2px var(--pcom-dark-blue);
+}
+
+.proxy-converter-wrapper > div button,
+.proxy-converter-wrapper > div input {
+	padding: .25em .5em;
+	border: solid 2px var(--pcom-dark-blue);
+	line-height: 1.75;
+}
+
+.proxy-converter-wrapper > div button:hover {
+	background: var(--pcom-yellow);
+	color: var(--pcom-text);
+	border-color: var(--pcom-text);
+}
+.proxy-converter-wrapper > div button:focus {
+	outline: solid 2px currentColor;
+	outline-offset: -5px !important;
+}
