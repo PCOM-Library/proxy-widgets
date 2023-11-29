@@ -1,4 +1,20 @@
 window.addEventListener('load', function(event) { 
+	document.querySelector('#voyager_declutter button').addEventListener('click', function(evt) {
+		let url = document.getElementById('voy_dc_input').value;
+		let output = document.getElementById('voy_dc_output');
+		let prefix = 'https://widgets.ebscohost.com/prod/customlink/proxify/proxify.php?count=1&encode=1&proxy=https%3A%2F%2Fgo.openathens.net%2Fredirector%2Fpcom.edu%3Furl%3D&target=';
+
+		if(url.startsWith(prefix)) {
+			output.value = url.replace(prefix,'');
+		}
+		else {
+			output.value = url;
+		}
+		
+		output.focus();
+		output.select();
+	});
+
 	document.querySelector('#lww_converter button').addEventListener('click', function(evt) {
 		let url = document.getElementById('lww_input').value;
 		let output = document.getElementById('lww_output');
