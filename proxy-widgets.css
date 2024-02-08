@@ -9,6 +9,7 @@
 .proxy-converter-wrapper > div {
 	display: flex;
 	align-items: baseline;
+	justify-content: center;
 }
 .proxy-converter-wrapper > div + div {
 	margin-top: .5em;
@@ -19,21 +20,18 @@
 }
 .proxy-converter-wrapper > div input {
 	flex-grow: 1;
-	padding: .25em .5em;
-		border-radius: var(--pcom-border-radius);
-	border: solid 2px var(--pcom-dark-blue);
+	min-width: 1rem;
 }
 .proxy-converter-wrapper > div button {
 	margin-left: .375em;
 	color: var(--pcom-white);
 	background: var(--pcom-blue);
-	border-radius: var(--pcom-border-radius);
-	border: solid 2px var(--pcom-dark-blue);
 }
 
 .proxy-converter-wrapper > div button,
 .proxy-converter-wrapper > div input {
 	padding: .25em .5em;
+	border-radius: var(--pcom-border-radius);
 	border: solid 2px var(--pcom-dark-blue);
 	line-height: 1.75;
 }

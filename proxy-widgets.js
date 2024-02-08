@@ -1,9 +1,51 @@
 window.addEventListener('load', function(event) { 
+	document.querySelector('#url_comparer button').addEventListener('click', function(evt) {
+		let url1 = document.getElementById('url_compare1_input').value.trim();
+		url1 = new URL(url1.trim());
+		let url2 = document.getElementById('url_compare2_input').value.trim();
+		url2 = new URL(url2.trim());
+		let out = document.getElementById('url_compare_output');
+		
+		let html = '<div style="display:inline-block"><table><caption>URL 1 Components</caption>';
+		html = html + '<tr><th>Protocol:</th><td>' + url1.protocol + '</td></tr>';
+		html = html + '<tr><th>Hostname:</th><td>' + url1.hostname + '</td></tr>';
+		html = html + '<tr><th>Pathname:</th><td>' + url1.pathname + '</td></tr>';
+		html = html + '</table>';
+
+		if(url1.search.length > 0) {
+			html = html + '<table><caption>URL1 Query Parameters</caption>';
+			url1.searchParams.sort();
+			for([k,v] of url1.searchParams) 
+				html = html + '<tr><th>' + k +':</th><td>' + v + '</td></tr>';
+			html = html + '</table>';
+		}
+		html = html + '</div>';
+		
+		html = html + '<div style="display:inline-block; margin-left:1em; margin-bottom:.5em"><table><caption>URL 2 Components</caption>';
+		html = html + '<tr><th>Protocol:</th><td>' + url2.protocol + '</td></tr>';
+		html = html + '<tr><th>Hostname:</th><td>' + url2.hostname + '</td></tr>';
+		html = html + '<tr><th>Pathname:</th><td>' + url2.pathname + '</td></tr>';
+		html = html + '</table>';
+
+		if(url2.search.length > 0) {
+			html = html + '<table><caption>URL2 Query Parameters</caption>';
+			url2.searchParams.sort();
+			for([k,v] of url2.searchParams) 
+				html = html + '<tr><th>' + k +':</th><td>' + v + '</td></tr>';
+			html = html + '</table>';
+		}
+		html = html + '</div>';
+		
+		document.getElementById('url_compare_output').innerHTML = html;
+		
+		document.getElementById('url_comparer').scrollIntoView();
+	});
+
 	document.querySelector('#url_parser button').addEventListener('click', function(evt) {
 		let url = document.getElementById('url_parser_input').value.trim();
 		url = new URL(url.trim());
 		let out = document.getElementById('url_parser_output');
-		let html = '<div style="display:inline-block"><table><caption>URL Components</caption>';
+		let html = '<div style="display:inline-block; margin-bottom:.5em"><table><caption>URL Components</caption>';
 		html = html + '<tr><th>Protocol:</th><td>' + url.protocol + '</td></tr>';
 		html = html + '<tr><th>Hostname:</th><td>' + url.hostname + '</td></tr>';
 		html = html + '<tr><th>Pathname:</th><td>' + url.pathname + '</td></tr>';
