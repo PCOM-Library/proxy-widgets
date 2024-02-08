@@ -1,4 +1,44 @@
 window.addEventListener('load', function(event) { 
+	document.querySelector('#url_parser button').addEventListener('click', function(evt) {
+		let url = document.getElementById('url_parser_input').value.trim();
+		url = new URL(url.trim());
+		let out = document.getElementById('url_parser_output');
+		let html = '<div style="display:inline-block"><table><caption>URL Components</caption>';
+		html = html + '<tr><th>Protocol:</th><td>' + url.protocol + '</td></tr>';
+		html = html + '<tr><th>Hostname:</th><td>' + url.hostname + '</td></tr>';
+		html = html + '<tr><th>Pathname:</th><td>' + url.pathname + '</td></tr>';
+		html = html + '</table>';
+
+		if(url.search.length > 0) {
+			html = html + '<table><caption>Query Parameters</caption>';
+			url.searchParams.sort();
+			for([k,v] of url.searchParams) 
+				html = html + '<tr><th>' + k +':</th><td>' + v + '</td></tr>';
+			html = html + '</table>';
+		}
+		html = html + '</div>';
+		out.innerHTML = html;
+		document.getElementById('url_parser').scrollIntoView();
+	});
+	
+	document.querySelector('#clinicalkey_converter button').addEventListener('click', function(evt) {
+		let url = document.getElementById('ck_input').value.trim();
+		url = url.replace('http:','https:');
+		
+		if(!url.startsWith('https://www.clinicalkey.com/')) {
+			document.getElementById('ck_output').value = 'Not a ClinicalKey URL';
+			document.getElementById('ck_proxy').value = '';
+		}
+		else if(url.includes('/#!/')) {
+			document.getElementById('ck_output').value = encodeURIComponent(url);
+			document.getElementById('ck_proxy').value = 'NO';
+		}
+		else {
+			document.getElementById('ck_output').value = url
+			document.getElementById('ck_proxy').value = 'YES';
+		}
+	});
+
 	document.querySelector('#voyager_declutter button').addEventListener('click', function(evt) {
 		let url = document.getElementById('voy_dc_input').value;
 		let output = document.getElementById('voy_dc_output');

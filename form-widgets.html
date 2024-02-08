@@ -33,3 +33,41 @@
 		<input type="text" id="ebsco_output" class="output"  readonly="readonly">
 	</div>
 </div>
+
+
+<div id="clinicalkey_converter" class="proxy-converter-wrapper">
+	<div style="border-bottom: solid 2px; padding-bottom: 0.5em;">
+		<label for="ck_input">ClinicalKey URL:</label>
+		<input type="text" id="ebsco_input" class="input">
+		<button>Process</button>
+	</div>
+	<div>
+		<label for="ck_output">Use this URL:</label> 
+		<input type="text" id="ck_output" class="output"  readonly="readonly">
+	</div>
+	<div>
+		<label for="ck_proxy">Set Use Proxy to:</label> 
+		<input type="text" id="ck_proxy" class="output"  readonly="readonly">
+	</div>
+</div>
+
+<div id="url_parser" class="proxy-converter-wrapper">
+	<div>
+		<label for="url_parser_input">URL:</label>
+		<input type="text" id="url_parser_input" class="input">
+		<button>Parse</button>
+	</div>
+	<div id="url_parser_output"></div>
+</div>
+
+
+<div id="url_comparer" class="proxy-converter-wrapper">
+	<div>
+		<label for="url_compare1_input">URL 1:</label>
+		<input type="text" id="url_compare1_input" class="input">
+		<label for="url_compare2_input" style="margin-left:.5rem">URL 2:</label>
+		<input type="text" id="url_compare2_input" class="input">
+		<button>Compare</button>
+	</div>
+	<div id="url_compare_input"></div>
+</div>

@@ -47,3 +47,24 @@
 	outline: solid 2px currentColor;
 	outline-offset: -5px !important;
 }
+
+.proxy-converter-wrapper > div table {
+	width: 100%;
+	margin-top: .75rem;
+}
+.proxy-converter-wrapper > div table th {
+	padding-left: .25rem;
+	padding-right: 1rem;
+}
+.proxy-converter-wrapper > div table td {
+	padding-right: .25rem;
+}
+.proxy-converter-wrapper > div table caption  {
+	color: var(--pcom-text);
+	border-bottom: 2px solid var(--pcom-blue);
+	background: var(--pcom-blue);
+	color: var(--pcom-white);
+	font-weight: 700;
+	font-style: italic;
+	padding: .125rem .25rem;
+}
