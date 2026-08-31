@@ -104,26 +104,4 @@ window.addEventListener('load', function(event) {
 		output.select();
 	});
 
-	document.querySelector('#ebsco_converter button').addEventListener('click', function(evt) {
-		let url = document.getElementById('ebsco_input').value;
-		let output = document.getElementById('ebsco_output');
-		
-		let params = new URLSearchParams(url);
-		let auth = (params.get('AuthType') == 'sso');
-		let client = (params.get('custid') == 's6636215');
-		
-		if(!auth && !client) {
-			output.value = 'Might need proxy. Missing both AuthType and custID.';
-		}
-		else if(!auth) {
-			output.value = 'Might need proxy. Missing AuthType.';
-		}
-		else if(!client) {
-			output.value = 'Might need proxy. Missing custID.';
-		}
-		else {
-			output.value = 'Valid. Does not need proxy.';
-		}
-		output.focus();
-	});
 });
