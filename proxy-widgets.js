@@ -72,7 +72,7 @@ window.addEventListener('load', function(event) {
 			document.getElementById('ck_proxy').value = '';
 		}
 		else if(url.includes('/#!/')) {
-			document.getElementById('ck_output').value = encodeURIComponent(url);
+			document.getElementById('ck_output').value = 'https://go.openathens.net/redirector/pcom.edu?url=' + encodeURIComponent(url);
 			document.getElementById('ck_proxy').value = 'NO';
 		}
 		else {
